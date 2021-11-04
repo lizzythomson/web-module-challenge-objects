@@ -117,11 +117,73 @@ Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
 
+console.log(
+  "Review from Julius: ",
+  reviews.find(function (review) {
+    return review.name === "Julius";
+  }).feedback
+);
+
+// function foo(param1, param2) {
+//   return "43";
+// }
+
+// const foo = (param1, param2) => {
+//   return "43";
+// };
+
+// const foo = (param1, param2) => "43";
+
+// const arr = [43, 56, 21, 7];
+
+// const singleReview = reviews.find((review) => review === "Bipppbo");
+// const justNames = reviews.map((review) => review.name);
+// const allReviewExceptForJulius = reviews.filter(
+//   (review) => review !== "Julius"
+// );
+
+// function modifyArray(arr, mo)
+
+// let thing = null;
+// for (let i = 0; i < arr.length; i++) {
+//   const elem = arr[i];
+//   // do stuff
+//   if (elem === 53) {
+//     thing = elem;
+//   }
+// }
+// console.log(thing);
+
+// const singleReview = reviews.find((review) => review === "Bipppbo");
+// const review = "pizza";
+
+// const allReviewExceptForJulius = reviews.filter(
+//   (review) => review !== "Julius"
+// );
+
+// function filter(arr, checker) {
+//   const newArray = [];
+
+//   for (let i = 0; i < arr.length; i++) {
+//     const elem = arr[i];
+//     if (checker(elem)) {
+//       newArray.push(elem);
+//     }
+//   }
+
+//   return newArray;
+// }
+
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Reyna's feedback is missing! Use what you know to do the following: (no function needed) 
   1. Add this feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
   2. log the reviews array to the console to check your work
 */
+
+reviews[7].feedback =
+  "this place is chill with really cool people, great for getting work done on weekdays";
+
+console.log(reviews[7].feedback);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function that creates an object with name, rating, feedback, add the new review to the end of an array and returns the resulting array
@@ -132,8 +194,16 @@ Write a function that creates an object with name, rating, feedback, add the new
   4. should return the resulting array
 */
 
-function addReview(/*Your Code Here */) {
-  /*Your Code Here */
+function addReview(array, name, rating, feedback) {
+  const updatedReview = [];
+  updatedReview.push(array);
+  const newReview = {
+    name,
+    rating,
+    feedback,
+  };
+  updatedReview.push(newReview);
+  return updatedReviews;
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -146,8 +216,8 @@ Use the getReviewByIndex function below to do the following:
   For example: getReviewByIndex(reviews,0) would return: "Daniela gave the restaurant a 5 star review, and their feedback was: Beautiful atmosphere and wonderful vegan options!"
 */
 
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
+function getReviewByIndex(array, number) {
+  return `${array[number].name} gave the restaurant a ${array[number].rating} star review, and their feedback was: ${array[number].feedback}`;
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -161,8 +231,10 @@ Use the getLastReview function below to do the following:
   For example: getLastReview(reviews) would return: "Reyna gave the restaurant a 3.5 star review, and their feedback was: this place is chill with really cool people, great for getting work done on weekdays".
 */
 
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
+function getLastReview(array) {
+  return `${array[array.length - 1].name} gave the restaurant a ${
+    array[array.length - 1].rating
+  } star review, and their feedback was: ${array[array.length - 1].feedback}`;
 }
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
